@@ -296,7 +296,7 @@ class SoftBC_agent(object):
             if i % lr_decay_rate == 0:
                 adjust_lr(self.optimizer_inverse, 2.)
 
-    def pretrain_dynamics_with_demo(self, iter=100, epoch=2, lr_decay_rate=30):
+    def pretrain_dynamics_with_demo(self, iter=200, epoch=2, lr_decay_rate=50):
         '''
         designed for normal setting
         use demo to train the dynamics model
@@ -330,7 +330,7 @@ class SoftBC_agent(object):
                 value_loss += param.pow(2).sum() * l2_reg
             self.optimizer_value.zero_grad()
             value_loss.backward()
-            torch.nn.utils.clip_grad_norm_(self.value_net.parameters(), 2)
+            torch.nn.utils.clip_grad_norm_(self.value_net.parameters(), 5)
             self.optimizer_value.step()
             self.writer.add_scalar('loss/value_loss', value_loss, total_step)
 
