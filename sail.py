@@ -56,7 +56,7 @@ def get_args():
     parser.add_argument('--optim-batch-size', type=int, default=128, metavar='N')
 
     parser.add_argument('--load-running-state', type=int, default=0)
-    parser.add_argument('--beta', type=float, default=0.1, help='beta VAE coefficient')
+    parser.add_argument('--beta', type=float, default=0.005, help='beta VAE coefficient')
     parser.add_argument('--resume', action='store_true', default=False,
                         help='resume pretrained models')
     parser.add_argument('--transfer', action='store_true', default=False,

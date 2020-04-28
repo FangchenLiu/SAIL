@@ -95,7 +95,7 @@ class SoftBC_agent(object):
         # print(self.running_state.rs.n, self.running_state.rs.mean, self.running_state.rs.var)
         return self.running_state
 
-    def pretrain_policy(self, epoches=50):
+    def pretrain_policy(self, epoches=150):
         state_tuples = torch.from_numpy(self.state_tuples).to(self.dtype).to(self.device)
         expert_states = state_tuples[:, :self.state_dim]
         expert_next_states = state_tuples[:, self.state_dim:self.state_dim*2]
@@ -254,7 +254,7 @@ class SoftBC_agent(object):
         next_states = torch.from_numpy(np.stack(batch.next_state)).to(self.dtype).to(self.device)
         self.inverse_model.train(states, next_states, actions, self.optimizer_inverse, epoch=epoch, batch_size=self.args.optim_batch_size)
 
-    def pretrain_vae(self, iter=100, epoch=2, lr_decay_rate=30):
+    def pretrain_vae(self, iter=200, epoch=2, lr_decay_rate=50):
         state_tuples = torch.from_numpy(self.state_tuples).to(self.dtype).to(self.device)
         s, t, action = state_tuples[:, :self.state_dim], state_tuples[:, self.state_dim:2*self.state_dim], \
                        state_tuples[:, 2*self.state_dim:]
@@ -275,7 +275,7 @@ class SoftBC_agent(object):
             if i % lr_decay_rate == 0:
                 adjust_lr(self.optimizer_vae, 2.)
 
-    def pretrain_dynamics_with_l2(self, policy_epoch=50, iter=100, epoch=2, lr_decay_rate=30):
+    def pretrain_dynamics_with_l2(self, policy_epoch=50, iter=200, epoch=2, lr_decay_rate=50):
         '''
             designed for cross-morphology
             use l2 to pretrain policy

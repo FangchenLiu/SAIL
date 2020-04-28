@@ -19,11 +19,11 @@ python sail.py --env-name [YOUR-ENV-NAME] --expert-traj-path [PATH-TO-DEMO] --be
 ```
 For example, for original hopper imitation:
 ```bash
-python sail.py --env-name Hopper-v2 --expert-traj-path ./expert/assets/expert_traj/Hopper-v2_expert_traj.p --beta 0.01 --transfer
+python sail.py --env-name Hopper-v2 --expert-traj-path ./expert/assets/expert_traj/Hopper-v2_expert_traj.p --beta 0.005
 ```
 for disabled swimmer imitation
 ```bash
-python sail.py --env-name DisableSwimmer-v0 --expert-traj-path ./expert/assets/expert_traj/Swimmer-v2_expert_traj.p --beta 0.01 --transfer
+python sail.py --env-name DisableSwimmer-v0 --expert-traj-path ./expert/assets/expert_traj/Swimmer-v2_expert_traj.p --beta 0.005 --transfer
 ```
 
 ## Cite Our Paper
@@ -38,4 +38,4 @@ If you find it useful, please consider to cite our paper.
 ```
 
 ## Demonstrations
-Please download [here](https://arxiv.org/pdf/1911.10947.pdf) and put it to ```./expert/assets/expert_traj```
+Please download [here](https://drive.google.com/open?id=1cIqYevPDE2_06Elyo_UqEfHiQvOKP6in) and put it to ```./expert/assets/expert_traj```
