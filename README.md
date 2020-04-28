@@ -1,9 +1,7 @@
 # State Alignment-based Imitation Learning
 We propose a state-based imitation learning method for cross-morphology imitation learning. by considering both the state visitation distribution and local transition alignment.
 
-## Paper
-This paper is accepted by ICLR 2020. For more details, please refer to [our paper](https://arxiv.org/pdf/1911.10947.pdf).
-The code is in a pre-release stage and under maintenance. 
+### The code is in a pre-release stage and under maintenance. 
 
 ## Train
 The demonstration is provided in ``./expert/assets/expert_traj``. They are obtained from well-trained expert algorithms (SAC or TRPO).
