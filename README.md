@@ -1,5 +1,5 @@
 # State Alignment-based Imitation Learning
-We propose a state-based imitation learning method for cross-morphology imitation learning. by considering both the state visitation distribution and local transition alignment.
+We propose a state-based imitation learning method for cross-morphology imitation learning, by considering both the state visitation distribution and local transition alignment.
 
 ### The code is in a pre-release stage and under maintenance. 
 
